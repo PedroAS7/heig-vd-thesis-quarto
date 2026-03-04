@@ -10,7 +10,7 @@
 | Adapted for Quarto by @PS-HEIG with help of Claude AI Sonnet 4.6
 */
 
-#import "_extensions/heig_bachelor_thesis_en/macros.typ": *
+#import "_extensions/PedroAS7/heig_bachelor_thesis_en/macros.typ": *
 #import "@preview/codly:1.3.0": *
 #import "@preview/codly-languages:0.1.1": *
 #import "@preview/dashy-todo:0.1.3": *
@@ -116,7 +116,7 @@
   // ------------------------------------
   // Title page
   // ------------------------------------
-  image("_extensions/heig_bachelor_thesis_en/images/HEIG-VD_logotype-baseline_rouge-cmjn.pdf", width: 6cm)
+  image("_extensions/PedroAS7/heig_bachelor_thesis_en/images/HEIG-VD_logotype-baseline_rouge-cmjn.pdf", width: 6cm)
   v(10%)
   align(center, [#text(size: 14pt, [*Bachelor's Thesis*])])
   v(4%)
