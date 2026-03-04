@@ -7,7 +7,7 @@
 | Adapted from code by @DACC4 and @samuelroland.
 | Source: https://github.com/DACC4/HEIG-VD-typst-template-for-TB
 | Translated into English by @EnJiBe
-| Adapted for Quarto by @PS-HEIG with help of Claude AI Sonnet 4.6
+| Adapted for Quarto by @PS-HEIG with help from Claude AI Sonnet 4.6
 */
 
 #import "_extensions/PedroAS7/heig_bachelor_thesis_en/macros.typ": *
@@ -16,8 +16,7 @@
 #import "@preview/dashy-todo:0.1.3": *
 
 // ------------------------------------
-// Main template function called by typst-show.typ
-// All parameters come from your .qmd front matter via Quarto
+// Main template function
 // ------------------------------------
 #let tb-report(
   title: none,
@@ -33,7 +32,6 @@
   abstract: none,
   confidential: false,
   lang: "en",
-  // The document body produced by Quarto from your .qmd content
   doc,
 ) = {
 
@@ -228,13 +226,16 @@
   heading(level: 1, numbering: none, outlined: false, bookmarked: true)[Table of Contents]
   outline(title: none, depth: 2, indent: 15pt)
 
-  // ------------------------------------
-  // Main content from your .qmd file
-  // Heading numbering is turned on here
-  // ------------------------------------
   set heading(numbering: "1.1")
+
+  // ------------------------------------
+  // Main content
+  // ------------------------------------
   doc
 
+  // ------------------------------------
+  // Table of figures
+  // ------------------------------------
   context {
     let figures = query(figure.where(kind: "quarto-float-fig"))
     if figures.len() != 0 {
@@ -243,6 +244,9 @@
     }
   }
 
+  // ------------------------------------
+  // List of tables
+  // ------------------------------------
   context {
     let tables = query(figure.where(kind: "quarto-float-tbl"))
     if tables.len() != 0 {

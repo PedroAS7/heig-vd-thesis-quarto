@@ -6,6 +6,14 @@ The original template has been translated into English by Github user [@EnJiBe](
 
 The original Typst (and LaTeX) template can be found in [this repository](https://github.com/sylvain-pasini/HEIG-VD-templates-for-reports).
 
+## Installing the extension
+
+To install this extension in your Quarto project, use the following command:
+
+```
+quarto install extension PedroAS7/heig-vd-thesis-quarto
+```
+
 ## Writing the abstract
 
 In order to properly show the abstract section, you must install the [abstract-section](https://github.com/pandoc-ext/abstract-section) plugin using the following command:
