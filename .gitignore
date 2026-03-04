@@ -1,0 +1,8 @@
+# Quarto project files
+/.quarto/
+
+# Generated files
+index.typ
+/_book/
+/index_files/
+**/*.quarto_ipynb

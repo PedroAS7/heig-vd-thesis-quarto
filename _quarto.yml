@@ -1,0 +1,31 @@
+project:
+  type: book
+  preview:
+    port: 4242
+
+book:
+  chapters:
+    - abstract.md
+    - index.qmd
+
+filters:
+  - abstract-section
+
+format:
+  heig_bachelor_thesis_en-typst:
+    keep-typ: true
+
+title: "My Thesis Title"
+subtitle: "A subtitle"
+author: "Jane Smith"
+supervisor: "Prof. John Doe"
+department: "Information Technology"
+program: "BSc Engineering"
+specialization: "Software Engineering"
+client-name: "John Doe"
+client-company: "ACME Corp"
+academic-years: "2025–2026"
+confidential: true
+lang: "en"
+bibliography: references.bib
+

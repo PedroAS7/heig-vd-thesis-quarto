@@ -1,0 +1,19 @@
+# Chapter number one
+
+See @knuth84 for additional discussion of literate programming.
+
+## Tables
+
+This is a very nice table with useful data:
+
+| Data name    | Value |
+|:-------------|:-----:|
+| Current year |  2026 |
+
+: My table caption {#tbl-id-of-table}
+
+## Images
+
+And this is a very, very nice image:
+
+![A cute dog and a cute cat, @catanddog](https://d3i6fh83elv35t.cloudfront.net/static/2018/04/Roger-H-Goun.jpg){#fig-animals width=300}
