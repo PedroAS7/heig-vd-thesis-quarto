@@ -54,7 +54,8 @@
   return ""
 }
 
-#let annex(body) = {
-  set heading(numbering: "A", supplement: [Annexe])
-  body
+#let chapter(it) = {
+  pagebreak(weak: true, to: none)
+  v(2.5em)
+  it
 }

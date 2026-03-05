@@ -46,10 +46,7 @@
   set heading(numbering: none)
 
   show heading.where(level: 1): it => [
-    #pagebreak(weak: true, to: none)
-    #v(2.5em)
-    #it
-    \
+    #chapter(it)
   ]
 
   show outline.entry.where(level: 1): it => {
@@ -69,12 +66,22 @@
     paper: "a4",
     numbering: "1",
     header: context {
-      if (not is-first-page(page)) and (not is-title-page(page)) {
-        columns(2, [
-          #align(left)[#smallcaps([#currentH()])]
-          #colbreak()
-          #align(right)[#if author != none { author }]
-        ])
+      if (not is-first-page(page)) {
+        // Not the first page of the chapter
+        if (not is-title-page(page)) {
+          columns(2, [
+            #align(left)[#smallcaps([#currentH()])]
+            #colbreak()
+            #align(right)[#if author != none { author }]
+          ])
+
+        // First page of the chapter
+        } else {
+          columns(2, [
+            #colbreak()
+            #align(right)[#if author != none { author }]
+          ])
+        }
         hr()
       }
     },

@@ -23,3 +23,34 @@ quarto install extension pandoc-ext/abstract-section
 ```
 
 After installing it, you can write the abstract section inside the `abstract.md` file. You must keep the `# Abstract` headline, as well as the separator at the end of the file.
+
+## Appendices
+
+In order to use appendices, a workaround must be used. You must not use the "appendices" field in your Quarto project's YAML file, but must instead treat your appendix files are actual chapters:
+
+```yaml
+book:
+  chapters:
+    - abstract.md
+    - index.qmd
+    
+  # LIKE this:
+    - appendices.md
+  
+  # NOT like this:
+  appendices:
+    - appendices.md
+```
+
+Moreover, the first file that contains appendices must start with the following block of code:
+
+````quarto
+```{=typst}
+#counter(heading).update(1)
+#set heading(numbering: "A1.a", supplement: [Appendix])
+```
+
+# Appendices
+````
+
+You can have a look at `abstract.md` and `_quarto.yml` to better understand how to use this.

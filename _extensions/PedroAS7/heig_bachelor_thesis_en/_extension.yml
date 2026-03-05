@@ -1,6 +1,6 @@
 title: HEIG Bachelor Thesis template, in English
 author: \@PS-HEIG, \@EnJiBe, \@DACC4, \@samuelroland
-version: 1.0.2
+version: 1.0.3
 quarto-required: ">=1.9.0"
 contributes:
   formats:

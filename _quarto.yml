@@ -7,6 +7,11 @@ book:
   chapters:
     - abstract.md
     - index.qmd
+    - appendices.md
+  
+  # NOT like this:
+  #appendices:
+  #  - appendices.md
 
 filters:
   - abstract-section
@@ -24,7 +29,7 @@ program: "BSc Engineering"
 specialization: "Software Engineering"
 client-name: "John Doe"
 client-company: "ACME Corp"
-academic-years: "2025–2026"
+academic-years: "2025-2026"
 confidential: true
 lang: "en"
 bibliography: references.bib
