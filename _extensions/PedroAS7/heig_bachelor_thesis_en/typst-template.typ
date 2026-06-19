@@ -49,6 +49,24 @@
     #chapter(it)
   ]
 
+  show heading.where(level: 1): it => {
+    it
+    context {
+      let fig-count = query(figure.where(kind: "quarto-float-fig")).filter(f =>
+        f.location().page() < here().page() or
+        (f.location().page() == here().page() and
+        f.location().position().y < here().position().y)
+      ).len()
+      let tbl-count = query(figure.where(kind: "quarto-float-tbl")).filter(f =>
+        f.location().page() < here().page() or
+        (f.location().page() == here().page() and
+        f.location().position().y < here().position().y)
+      ).len()
+      counter(figure.where(kind: "quarto-float-fig")).update(fig-count)
+      counter(figure.where(kind: "quarto-float-tbl")).update(tbl-count)
+    }
+  }
+
   show outline.entry.where(level: 1): it => {
     if it.element.func() != heading {
       return it
@@ -167,7 +185,7 @@
   // Authentication page
   // ------------------------------------
   heading(level: 1, [Authentication])
-  [I hereby certify that I have completed this work and have used no sources other than those expressly mentioned.]
+  [I hereby certify that I have completed this work and have used no sources other than those explicitly mentioned.]
   v(20%)
   table(
     stroke: none,
